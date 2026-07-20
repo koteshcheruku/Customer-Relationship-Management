@@ -28,7 +28,7 @@ jobs:
 
       - name: Build React App
         env:
-          VITE_API_URL: http://172.31.21.245:8080
+          VITE_API_URL: http://ec2-13-53-125-60.eu-north-1.compute.amazonaws.com:8080
         run: npm run build
 
       - name: Configure AWS Credentials
