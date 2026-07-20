@@ -270,7 +270,7 @@ export const ChatPage = () => {
     );
 
     return (
-        <div className="max-w-7xl mx-auto h-[calc(100vh-120px)]">
+        <div className="max-w-7xl mx-auto h-[calc(100vh-120px)] animate-slide-in">
             <div className="flex gap-0 h-full rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg">
 
                 {/* ── Contacts List ── */}
@@ -513,7 +513,7 @@ export const ChatPage = () => {
             {/* Create Team Modal */}
             {isCreateTeamModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-md border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-xl w-full max-w-md border border-slate-200 dark:border-slate-800 overflow-hidden">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
                             <h2 className="text-lg font-bold text-slate-900 dark:text-white">Create New Team</h2>
                             <button onClick={() => setIsCreateTeamModalOpen(false)} className="p-2 text-slate-400 hover:bg-slate-100 rounded-full transition"><X size={18} /></button>

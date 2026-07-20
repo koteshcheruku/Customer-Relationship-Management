@@ -112,7 +112,7 @@ export const CustomersPage = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto relative">
+        <div className="max-w-7xl mx-auto relative animate-slide-in space-y-6">
             <div className="flex items-center justify-between mb-8">
                 <div>
                     <h1 className={h1cls}>Customers</h1>
@@ -160,7 +160,7 @@ export const CustomersPage = () => {
             {/* Edit/Add Customer Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                                 {editingCustomerId ? 'Edit Customer' : 'Add New Customer'}
@@ -228,7 +228,7 @@ export const CustomersPage = () => {
             {/* View Details Modal */}
             {isViewModalOpen && viewingCustomer && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                                 <Eye className="text-blue-500" size={24} />

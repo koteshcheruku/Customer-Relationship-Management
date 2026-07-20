@@ -41,7 +41,7 @@ export const RoleManagementPage = () => {
 
     return (
         <>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
             <div className="flex items-center justify-between mb-8">
                 <div>
                     <h1 className={h1cls}>Role Management</h1>

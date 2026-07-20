@@ -151,7 +151,7 @@ export default function App() {
   const wrap = (Page, allowedRoles) => (
     <ProtectedRoute isAuthenticated={isAuthenticated} isLoading={isLoadingAuth} user={user} allowedRoles={allowedRoles}>
       <MainLayout darkMode={darkMode} onToggleDark={toggleDark} onLogout={handleLogout} user={user}>
-        <Page user={user} />
+        <Page user={user} darkMode={darkMode} onToggleDark={toggleDark} />
       </MainLayout>
     </ProtectedRoute>
   );

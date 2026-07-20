@@ -161,7 +161,7 @@ export const LeadsPage = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto relative">
+        <div className="max-w-7xl mx-auto relative animate-slide-in space-y-6">
             <div className="flex items-center justify-between mb-8">
                 <div>
                     <h1 className={h1cls}>Leads</h1>
@@ -332,7 +332,7 @@ export const LeadsPage = () => {
             {/* Edit/Add Lead Modal */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-xl w-full max-w-lg border border-slate-200 dark:border-slate-800 overflow-hidden">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">
                                 {editingLeadId ? 'Edit Lead' : 'Add New Lead'}

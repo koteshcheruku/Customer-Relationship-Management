@@ -115,7 +115,7 @@ export const CommunicationsPage = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto space-y-6">
+        <div className="max-w-7xl mx-auto space-y-6 animate-slide-in">
             {/* Header */}
             <div>
                 <h1 className={h1cls}>Communications Hub</h1>

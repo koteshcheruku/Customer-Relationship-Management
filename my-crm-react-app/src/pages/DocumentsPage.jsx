@@ -184,7 +184,7 @@ export const DocumentsPage = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
             {isUploadModalOpen && <UploadModal />}
             {isViewModalOpen && <ViewModal />}
 

@@ -168,7 +168,7 @@ export const UserManagementPage = () => {
 
     return (
         <>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
 
             <div className="flex justify-between mb-8">
                 <div>
@@ -262,7 +262,7 @@ export const UserManagementPage = () => {
 
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[90vh]">
+                    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[90vh]">
                         
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 flex-shrink-0">
                             <h2 className="text-xl font-bold text-slate-900">
@@ -385,7 +385,7 @@ export const UserManagementPage = () => {
             {/* View Details Modal */}
             {isViewModalOpen && viewingUser && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
-                    <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[90vh]">
+                    <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-xl w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[90vh]">
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex-shrink-0">
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
@@ -513,7 +513,7 @@ export const UserManagementPage = () => {
         {/* Invite Link Modal */}
         {isInviteOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-                <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl w-full max-w-md border border-slate-200 dark:border-slate-800 overflow-hidden">
+                <div className="bg-white dark:bg-[#1E293B] rounded-2xl shadow-xl w-full max-w-md border border-slate-200 dark:border-slate-800 overflow-hidden">
                     <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-700">
                         <h2 className="text-lg font-bold text-slate-900 dark:text-white">Send Invite Link</h2>
                         <button onClick={() => setIsInviteOpen(false)} className="p-2 text-slate-400 hover:bg-slate-100 rounded-full transition"><X size={18} /></button>

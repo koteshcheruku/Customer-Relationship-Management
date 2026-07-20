@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { card, h1cls } from '../components/ui/styles';
 import api from '../lib/api';
 
-export const SettingsPage = () => {
+export const SettingsPage = ({ darkMode, onToggleDark }) => {
     const [users, setUsers] = useState([]);
     const [selectedUserId, setSelectedUserId] = useState('');
     
@@ -313,6 +313,26 @@ export const SettingsPage = () => {
                 </form>
             </div>
             )}
+            {/* Appearance */}
+            <div className={`${card} p-8 mb-6`}>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Appearance</h2>
+                <div className="flex flex-col gap-4">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="font-medium text-slate-900 dark:text-white">Dark Mode</p>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">Toggle between light and dark theme</p>
+                        </div>
+                        <button
+                            onClick={onToggleDark}
+                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${darkMode ? 'bg-blue-600' : 'bg-slate-300 dark:bg-slate-600'}`}
+                        >
+                            <span
+                                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${darkMode ? 'translate-x-6' : 'translate-x-1'}`}
+                            />
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

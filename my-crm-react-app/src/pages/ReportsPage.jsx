@@ -31,7 +31,7 @@ export const ReportsPage = () => {
         fetchReports();
     }, []);
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
             <div>
                 <h1 className={h1cls}>Reports</h1>
                 <p className={`${sub} mb-8`}>Analytics and performance reports</p>

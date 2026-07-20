@@ -33,7 +33,7 @@ export const DashboardPage = () => {
   const [activeTasks, setActiveTasks] = useState(0);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div className="mb-8">
         <h1 className={h1cls}>Dashboard</h1>
         <p className={sub}>Welcome back! Here's what's happening with your CRM.</p>
@@ -142,7 +142,7 @@ export const LeadsPage = () => {
   const statuses = ['All', 'New', 'Contacted', 'Qualified', 'Converted'];
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className={h1cls}>Leads</h1>
@@ -235,7 +235,7 @@ export const CustomersPage = () => {
   const [customers] = useState([]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className={h1cls}>Customers</h1>
@@ -285,7 +285,7 @@ export const TasksPage = () => {
   const [tasks, setTasks] = useState([]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className={h1cls}>Tasks</h1>
@@ -347,7 +347,7 @@ export const CommunicationsPage = () => {
   const [communications] = useState([]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div>
         <h1 className={h1cls}>Communications</h1>
         <p className={`${sub} mb-8`}>Track calls, voice recordings, and chat logs</p>
@@ -435,7 +435,7 @@ export const ChatPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto h-[calc(100vh-120px)]">
+    <div className="max-w-7xl mx-auto h-[calc(100vh-120px)] animate-slide-in">
       <div className="flex gap-6 h-full">
         {/* Chat List */}
         <div className={`w-80 ${card} flex-col hidden lg:flex`}>
@@ -531,7 +531,7 @@ export const DocumentsPage = () => {
   const [documents] = useState([]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className={h1cls}>Documents</h1>
@@ -583,7 +583,7 @@ export const DocumentsPage = () => {
 
 export const ReportsPage = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div>
         <h1 className={h1cls}>Reports</h1>
         <p className={`${sub} mb-8`}>Analytics and performance reports</p>
@@ -667,7 +667,7 @@ export const UserManagementPage = () => {
   const [users] = useState([]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className={h1cls}>User Management</h1>
@@ -725,7 +725,7 @@ export const RoleManagementPage = () => {
   const [roles] = useState([]);
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto animate-slide-in space-y-6">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className={h1cls}>Role Management</h1>
