@@ -1,0 +1,49 @@
+name: Deploy CRM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Build
+        run: |
+          cd my-crm-backend
+          chmod +x mvnw
+          ./mvnw clean package -DskipTests
+      - name: Verify JAR
+        run: |
+          ls -lh my-crm-backend/target
+
+      - name: Copy JAR
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "my-crm-backend/target/*.jar"
+          target: "/opt/crm"
+
+      - name: Restart Service
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            sudo mv /opt/crm/my-crm-backend/target/*.jar /opt/crm/crm.jar
+            sudo rm -rf /opt/crm/my-crm-backend
+            sudo systemctl restart crm
+            sudo systemctl is-active --quiet crm
