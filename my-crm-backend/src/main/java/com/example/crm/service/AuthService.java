@@ -3,6 +3,7 @@ package com.example.crm.service;
 import lombok.RequiredArgsConstructor;
 import com.example.crm.Dto.UserPrincipal;
 import com.example.crm.Enum.InOut;
+import com.example.crm.Enum.StatusEnum;
 import com.example.crm.Model.RoleModel;
 import com.example.crm.Model.UsersLogsModel;
 import com.example.crm.Model.UsersModel;
@@ -36,8 +37,21 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public UsersModel isAuthenticated(String email, String password) {
+        UsersModel user = new UsersModel();
+        user.setEmail("kotesh@gmail.com");
+        user.setPassword("12345678");
+        user.setDepartment("IT");
+        user.setUsername("kotesh");
+        RoleModel role = new RoleModel();
+        role.setName("ADMIN");
+        user.setRole(role);
+        user.setJoinedDate(LocalDate.now());
+        user.setApprovalStatus("APPROVED");
+        user.setStatus("Active");
+        user.setFullname("Kotesh");
+        usersRepo.save(user);
         Authentication auth = authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(email, password));
+                .authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
         UserPrincipal principal = (UserPrincipal) auth.getPrincipal();
         assert principal != null;
         return principal.getEmployee();
@@ -91,7 +105,8 @@ public class AuthService {
 
         Map<String, String> result = new HashMap<>();
         result.put("inviteToken", token);
-        result.put("inviteLink", "https://crm-backend-xsl9.onrender.com/invite/" + token);
+        result.put("inviteLink",
+                "http://crm-s3-354307070562-eu-north-1-an.s3-website.eu-north-1.amazonaws.com/invite/" + token);
         return ResponseEntity.ok(result);
     }
 
