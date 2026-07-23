@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "my-crm-react-app/**"
+    # paths:
+    #   - "my-crm-react-app/**"
 
 jobs:
   deploy:
