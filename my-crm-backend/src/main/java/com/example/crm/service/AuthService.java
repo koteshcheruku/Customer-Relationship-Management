@@ -37,18 +37,8 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public UsersModel isAuthenticated(String email, String password) {
-        UsersModel user = new UsersModel();
-        user.setEmail("kotesh@gmail.com");
-        user.setPassword("12345678");
-        user.setDepartment("IT");
-        user.setUsername("kotesh");
-        RoleModel role = new RoleModel();
-        role.setName("ADMIN");
-        user.setRole(role);
-        user.setJoinedDate(LocalDate.now());
-        user.setApprovalStatus("APPROVED");
-        user.setStatus("Active");
-        user.setFullname("Kotesh");
+        UsersModel user = usersRepo.findByEmail("kote@gmail.com");
+        user.setPassword(passwordEncoder.encode("12345678"));
         usersRepo.save(user);
         Authentication auth = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
