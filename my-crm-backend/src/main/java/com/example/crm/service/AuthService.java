@@ -37,8 +37,20 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public UsersModel isAuthenticated(String email, String password) {
-        UsersModel user = usersRepo.findByEmail("kote@gmail.com");
-        user.setPassword(passwordEncoder.encode("12345678"));
+        RoleModel role = roleRepo.findByName("ADMIN")
+                .orElseThrow(() -> new RuntimeException("ADMIN role not found"));
+
+        UsersModel user = new UsersModel();
+        user.setEmail("kotesh@gmail.com");
+        user.setPassword("12345678");
+        user.setDepartment("IT");
+        user.setUsername("kotesh");
+        user.setRole(role);
+        user.setJoinedDate(LocalDate.now());
+        user.setApprovalStatus("APPROVED");
+        user.setStatus("Active");
+        user.setFullname("Kotesh");
+
         usersRepo.save(user);
         Authentication auth = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
