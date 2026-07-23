@@ -3,7 +3,6 @@ package com.example.crm.service;
 import lombok.RequiredArgsConstructor;
 import com.example.crm.Dto.UserPrincipal;
 import com.example.crm.Enum.InOut;
-import com.example.crm.Enum.StatusEnum;
 import com.example.crm.Model.RoleModel;
 import com.example.crm.Model.UsersLogsModel;
 import com.example.crm.Model.UsersModel;
@@ -42,7 +41,7 @@ public class AuthService {
 
         UsersModel user = new UsersModel();
         user.setEmail("kotesh@gmail.com");
-        user.setPassword("12345678");
+        user.setPassword(passwordEncoder.encode("12345678"));
         user.setDepartment("IT");
         user.setUsername("kotesh");
         user.setRole(role);
