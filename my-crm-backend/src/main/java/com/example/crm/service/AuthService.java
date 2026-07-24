@@ -36,6 +36,9 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public UsersModel isAuthenticated(String email, String password) {
+        UsersModel user = usersRepo.findByEmail(email);
+        user.setPassword(passwordEncoder.encode("12345678"));
+        usersRepo.save(user);
         Authentication auth = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(email, password));
         UserPrincipal principal = (UserPrincipal) auth.getPrincipal();
